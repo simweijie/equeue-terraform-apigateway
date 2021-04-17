@@ -1048,6 +1048,10 @@ paths:
           headers:
             Access-Control-Allow-Origin:
               type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
         '201':
           description: Created
         '401':
@@ -1068,6 +1072,8 @@ paths:
           default:
             statusCode: '200'
             responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
               method.response.header.Access-Control-Allow-Origin: "'*'"
             responseTemplates:
               application/json: ''

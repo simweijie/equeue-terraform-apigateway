@@ -85,7 +85,7 @@ resource "aws_api_gateway_stage" "api_gateway_stage" {
 
   stage_name    = var.stage_name
   rest_api_id   = aws_api_gateway_rest_api.api_gateway.id
-  deployment_id =  aws_api_gateway_deployment.api_gateway_deployment_20210417_1.id # "wjtnio"
+  deployment_id =  aws_api_gateway_deployment.api_gateway_deployment_20210417_2.id # "wjtnio"
   cache_cluster_size    = "0.5"
 
    access_log_settings {
