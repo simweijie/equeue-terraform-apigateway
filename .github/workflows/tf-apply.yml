@@ -1,13 +1,12 @@
 # modified from https://github.com/WahlNetwork/github-action-terraform/blob/master/.github/workflows/tf-apply.yml
-# and https://gist.github.com/thiagof/b2d95792839accef6254d245253a52cf
 
 name: "Terraform Apply"
 
-# Trigger when commits are pushed to the main branch
+# Trigger when commits are pushed to the master branch
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform-plan:
