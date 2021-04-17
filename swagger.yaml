@@ -1,0 +1,2412 @@
+swagger: '2.0'
+info:
+  description: eQueue Api Gateway
+  title: equeue-api-gateway
+paths:
+  api/activate-pending-staff:
+    post:
+      tags:
+      - activate-pending-staff
+      summary: activate-pending-staff
+      operationId: activate-pending-staff-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${activate_pending_staff_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/add-opening-hours:
+    post:
+      tags:
+      - add-opening-hours
+      summary: add-opening-hours
+      operationId: add-opening-hours-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${add_opening_hours_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/delete-customer-with-uin:
+    post:
+      tags:
+      - delete-customer-with-uin
+      summary: delete-customer-with-uin
+      operationId: delete-customer-with-uin-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${delete_customer_with_uin_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/delete-opening-hours:
+    post:
+      tags:
+      - delete-opening-hours
+      summary: delete-opening-hours
+      operationId: delete-opening-hours-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${delete_opening_hours_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/delete-staff-with-id:
+    post:
+      tags:
+      - delete-staff-with-id
+      summary: delete-staff-with-id
+      operationId: delete-staff-with-id-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${delete_staff_with_id_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/get-branch-queue:
+    post:
+      tags:
+      - get-branch-queue
+      summary: get-branch-queue
+      operationId: get-branch-queue-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${get_branch_queue_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/get-joined-queue-status:
+    post:
+      tags:
+      - get-joined-queue-status
+      summary: get-joined-queue-status
+      operationId: get-joined-queue-status-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${get_joined_queue_status_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/join-queue:
+    post:
+      tags:
+      - join-queue
+      summary: join-queue
+      operationId: join-queue-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${join_queue_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/leave-queue:
+    post:
+      tags:
+      - leave-queue
+      summary: leave-queue
+      operationId: leave-queue-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${leave_queue_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/list-of-branches:
+    post:
+      tags:
+      - list-of-branches
+      summary: list-of-branches
+      operationId: list-of-branches-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${list_of_branches_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/list-of-branches-with-clinic-id:
+    post:
+      tags:
+      - list-of-branches-with-clinic-id
+      summary: list-of-branches-with-clinic-id
+      operationId: list-of-branches-with-clinic-id-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${list_of_branches_with_clinic_id_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/list-of-clinics:
+    post:
+      tags:
+      - list-of-clinics
+      summary: list-of-clinics
+      operationId: list-of-clinics-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${list_of_clinics_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/list-of-staff-in-clinic:
+    post:
+      tags:
+      - list-of-staff-in-clinic
+      summary: list-of-staff-in-clinic
+      operationId: list-of-staff-in-clinic-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${list_of_staff_in_clinic_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/register-customer:
+    post:
+      tags:
+      - register-customer
+      summary: register-customer
+      operationId: register-customer-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${register_customer_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/register-staff-to-existing-clinic:
+    post:
+      tags:
+      - register-staff-to-existing-clinic
+      summary: register-staff-to-existing-clinic
+      operationId: register-staff-to-existing-clinic-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${register_staff_to_existing_clinic_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/register-staff-to-new-clinic:
+    post:
+      tags:
+      - register-staff-to-new-clinic
+      summary: register-staff-to-new-clinic
+      operationId: register-staff-to-new-clinic-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${register_staff_to_new_clinic_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/smart-search:
+    post:
+      tags:
+      - smart-search
+      summary: smart-search
+      operationId: smart-search-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${smart_search_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/update-customer-info:
+    post:
+      tags:
+      - update-customer-info
+      summary: update-customer-info
+      operationId: update-customer-info-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${update_customer_info_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/update-opening-hours:
+    post:
+      tags:
+      - update-opening-hours
+      summary: update-opening-hours
+      operationId: update-opening-hours-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${update_opening_hours_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/update-queue-status:
+    post:
+      tags:
+      - update-queue-status
+      summary: update-queue-status
+      operationId: update-queue-status-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${update_queue_status_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/update-staff:
+    post:
+      tags:
+      - update-staff
+      summary: update-staff
+      operationId: update-staff-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${update_staff_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/login:
+    post:
+      tags:
+      - login
+      summary: login
+      operationId: login-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${login_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/logout:
+    post:
+      tags:
+      - logout
+      summary: logout
+      operationId: logout-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${logout_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/staff-login:
+    post:
+      tags:
+      - staff-login
+      summary: staff-login
+      operationId: staff-login-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${staff_login_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/staff-logout:
+    post:
+      tags:
+      - staff-logout
+      summary: staff-logout
+      operationId: staff-logout-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${staff_logout_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+  api/search-filter:
+    post:
+      tags:
+      - search-filter
+      summary: search-filter
+      operationId: search-filter-POST
+      consumes:
+      - application/json;charset=UTF-8
+      produces:
+      - application/json;charset=UTF-8
+      parameters:
+      - in: body
+        name: Error
+        description: Error
+        required: true
+        schema:
+          "$ref": "#/definitions/Error"
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+      - name: x-api-key
+        in: header
+        required: true
+        type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+      security:
+      - api_key: []
+      x-amazon-apigateway-integration:
+        type: AWS
+        requestParameters:
+          integration.request.header.Content-Type: method.request.header.Content-Type
+        requestTemplates:
+          application/json: ''
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        httpMethod: POST
+        uri: "${search_filter_url}"
+        action: lambda:InvokeFunction
+        passthroughBehavior: NEVER
+      deprecated: false
+    options:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+          headers:
+            Access-Control-Allow-Origin:
+              type: string
+            Access-Control-Allow-Methods:
+              type: string
+            Access-Control-Allow-Headers:
+              type: string
+      x-amazon-apigateway-integration:
+        type: mock
+        responses:
+          default:
+            statusCode: '200'
+            responseParameters:
+              method.response.header.Access-Control-Allow-Methods: "'OPTIONS,POST'"
+              method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+              method.response.header.Access-Control-Allow-Origin: "'*'"
+            responseTemplates:
+              application/json: ''
+        requestTemplates:
+          application/json: '{"statusCode": 200}'
+        passthroughBehavior: when_no_match
+securityDefinitions:
+  api_key:
+    type: apiKey
+    name: x-api-key
+    in: header
+definitions:
+  Empty:
+    type: object
+    title: Empty Schema
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+    title: Error Schema

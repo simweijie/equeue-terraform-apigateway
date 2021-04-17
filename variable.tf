@@ -1,0 +1,32 @@
+variable "aws_region" {}
+variable "account_id" {}
+
+variable "stage_name" {}
+
+variable "query_customer_uin_name" {}
+variable "activate_pending_staff_name" {}
+variable "add_opening_hours_name" {}
+variable "delete_customer_with_uin_name" {}
+variable "delete_opening_hours_name" {}
+variable "delete_staff_with_id_name" {}
+variable "get_branch_queue_name" {}
+variable "get_joined_queue_status_name" {}
+variable "join_queue_name" {}
+variable "leave_queue_name" {}
+variable "list_of_branches_name" {}
+variable "list_of_branches_with_clinic_id_name" {}
+variable "list_of_clinics_name" {}
+variable "list_of_staff_in_clinic_name" {}
+variable "register_customer_name" {}
+variable "register_staff_to_existing_clinic_name" {}
+variable "register_staff_to_new_clinic_name" {}
+variable "smart_search_name" {}
+variable "update_customer_info_name" {}
+variable "update_opening_hours_name" {}
+variable "update_queue_status_name" {}
+variable "update_staff_name" {}
+variable "login_name" {}
+variable "logout_name" {}
+variable "staff_login_name" {}
+variable "staff_logout_name" {}
+variable "search_filter_name" {}
